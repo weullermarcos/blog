@@ -28,27 +28,38 @@ Route::get('listagem-usuario',[UserController::class, 'listUser']);
 
 //Exemplo: Route::metodo('URL',[Controller::class, 'metodo'])->name('nroute_name');
 
-/*
- * GET:
-*/
+//Agrupando rotas
+Route::group(['namespace' => 'Form'], function (){
+
+    /*
+    * GET:
+    */
 //Criando
-Route::get('usuarios', [TestController::class, 'listAllUsers']);
-Route::get('usuarios/{user}', [TestController::class, 'listUsers']);
+    Route::get('usuarios', [TestController::class, 'listAllUsers'])->name('users.listAll');
+    Route::get('usuarios/novo', [TestController::class, 'FormAddUser']);
+    Route::get('usuarios/editar/{user}', [TestController::class, 'FormEditUser']);
+    Route::get('usuarios/{user}', [TestController::class, 'listUsers']);
 
-/*
- * POST:
-*/
+    /*
+     * POST:
+    */
+
+    Route::post('usuarios/store', [TestController::class, 'storeUser'])->name('users.store');
+
+    /*
+     * PUT/PATCH:
+    */
+
+    Route::put('usuarios/edit/{user}', [TestController::class, 'edit'])->name('users.edit');
+
+    /*
+     * DELETE:
+    */
+
+    Route::delete('usuarios/destroy/{user}', [TestController::class, 'destroy'])->name('user.destroy');
 
 
-/*
- * PUT/PATCH:
-*/
-
-
-/*
- * DELETE:
-*/
-
+});
 
 
 
