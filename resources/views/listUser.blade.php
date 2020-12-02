@@ -1,6 +1,16 @@
+<html>
 
+<head>
+    <title>Detalhes do usuário</title>
+</head>
 
-<h1> Listagem de Usuário </h1>
+<body>
 
-<p> O nome do usuário é: {{$user->name}} e ele tem o e-mail: {{$user->email}} </p>
+    <h1>{{$user->name}}</h1>
+    <p>{{$user->email}}</p>
+    <p>{{ date('d/m/Y H:i', strtotime($user->created_at))}}</p>
+
+</body>
+</html>
+
 

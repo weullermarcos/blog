@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Form\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,32 @@ Route::get('/', function () {
 
 //forma auternativa de se fazer
 Route::get('listagem-usuario',[UserController::class, 'listUser']);
+
+
+//Exemplo: Route::metodo('URL',[Controller::class, 'metodo'])->name('nroute_name');
+
+/*
+ * GET:
+*/
+//Criando
+Route::get('usuarios', [TestController::class, 'listAllUsers']);
+Route::get('usuarios/{user}', [TestController::class, 'listUsers']);
+
+/*
+ * POST:
+*/
+
+
+/*
+ * PUT/PATCH:
+*/
+
+
+/*
+ * DELETE:
+*/
+
+
+
 
 
