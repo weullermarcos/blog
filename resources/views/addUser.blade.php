@@ -6,7 +6,7 @@
 
 <body>
 
-    <form action="{{route('users.store')}}" method="POST">
+    <form action="{{route('user.store')}}" method="POST">
 
         @csrf
         Nome: <input type="text" name="name"> <br/><br/>
